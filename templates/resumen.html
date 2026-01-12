@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>📊 Resumen</h2>
+
+    {% if datos %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Total pagado</th>
+            <th>Estado</th>
+        </tr>
+
+        {% for r in datos %}
+        <tr>
+            <td>{{ r["id"] }}</td>
+            <td>{{ r["nombre"] }}</td>
+            <td>${{ "%.2f"|format(r["pagado"]) }}</td>
+            <td>{{ r["estado"] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% else %}
+        <p>No hay datos para mostrar.</p>
+    {% endif %}
+
+    <a href="/" class="btn">⬅ Volver al menú</a>
+</div>
+
+</body>
+</html>

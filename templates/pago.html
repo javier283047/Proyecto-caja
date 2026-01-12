@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Pago</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Registrar pago</h2>
+
+    <p><strong>Nombre:</strong> {{ cliente.nombre }}</p>
+    <p><strong>Estado:</strong> {{ cliente.estado }}</p>
+    <p><strong>Monto semanal:</strong> ${{ cliente.monto_semana }}</p>
+
+    <form method="post">
+        <label>Monto del pago</label>
+        <input type="number" step="0.01" name="monto" required>
+
+        <div class="acciones">
+            <button class="btn">Registrar</button>
+            <a href="/editar_pago/{{ cliente.id }}" class="btn">
+                Editar último pago
+            </a>
+        </div>
+    </form>
+
+    <a href="/caja" class="btn">⬅ Volver a la lista</a>
+</div>
+
+</body>
+</html>
