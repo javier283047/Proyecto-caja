@@ -88,12 +88,3 @@ create table pagos (
 		on delete cascade
 );
 
-
-
-
-
-
-
-
-
-

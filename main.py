@@ -1,7 +1,7 @@
 import os
 import sys
 import psycopg2
-from archivo_caja import (
+from app.archivo_caja import (
     registrar_pago,
     semana_actual,
     resumen_completo_excel,
